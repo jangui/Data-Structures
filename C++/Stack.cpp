@@ -3,29 +3,28 @@ using namespace std;
 
 /*stack implementation using vector*/
 
-template <class T> class MyStack
-{
-private:
-    int cap;
-    int curr;
-    T *arr;
+template <class T> class Stack {
 public:
-    MyStack(int size= 10);
+    Stack(int size = 10);
     void push(T elem);
     T pop();
     T top();
     bool is_empty();
     bool is_full();
     int size();
+private:
+    int cap;
+    int curr;
+    T *arr;
 };
 
-template <class T> MyStack<T>::MyStack(int size) {
+template <class T> Stack<T>::Stack(int size) {
     arr = new T[size];
     cap = size;
     curr = -1; 
 }
 
-template <class T> void MyStack<T>::push(T elem) {
+template <class T> void Stack<T>::push(T elem) {
     if (is_full()) {
         cout << "Stack is full!" << endl;
         exit(1);
@@ -33,7 +32,7 @@ template <class T> void MyStack<T>::push(T elem) {
     arr[++curr] = elem;
 }
 
-template <class T> T MyStack<T>::pop() {
+template <class T> T Stack<T>::pop() {
     if (is_empty()) {
         cout << "Stack is empty" << endl;
         exit(1);
@@ -43,7 +42,7 @@ template <class T> T MyStack<T>::pop() {
     return elem;
 }
 
-template <class T> T MyStack<T>::top() {
+template <class T> T Stack<T>::top() {
     if (is_empty()) {
         cout << "Stack is empty" << endl;
         exit(1);
@@ -51,23 +50,14 @@ template <class T> T MyStack<T>::top() {
     return arr[curr];
 }
 
-template <class T> bool MyStack<T>::is_empty() {
+template <class T> bool Stack<T>::is_empty() {
     return (curr == -1);
 }
 
-template <class T> bool MyStack<T>::is_full() {
+template <class T> bool Stack<T>::is_full() {
     return (cap == curr+1);
 }
 
-template <class T> int MyStack<T>::size() {
+template <class T> int Stack<T>::size() {
     return curr+1;
-}
-
-int main() {
-    MyStack<int> s;
-    int a = 4;
-    s.push(a);
-    cout << s.top() << endl;
-    s.pop();
-    return 0;
 }
