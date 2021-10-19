@@ -1,6 +1,6 @@
 
-#ifndef MEDIANTWOSORTEDARRAYS_SOLUTION_H
-#define MEDIANTWOSORTEDARRAYS_SOLUTION_H
+#ifndef SOLUTION_H
+#define SOLUTION_H
 
 #include <vector>
 
@@ -13,4 +13,4 @@ public:
 };
 
 
-#endif //MEDIANTWOSORTEDARRAYS_SOLUTION_H
+#endif SOLUTION_H
